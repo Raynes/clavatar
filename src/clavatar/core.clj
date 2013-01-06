@@ -41,7 +41,7 @@
                  rating :pg
                  default :retro}}]
   (let [base-url (str gravatar-base-url
-                      (genhash email)
+                      (genhash (or email ""))
                       ".jpg"
                       (genparams :size size :default default :rating rating))]
     (str (if https "https://secure" "http://www") base-url)))
