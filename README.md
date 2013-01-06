@@ -7,7 +7,7 @@ This is a library to generate Gravatar URLs for a given email. It is extremely s
 Leiningen, of course.
 
 ```clojure
-:dependencies [[clavatar "0.2.0"]]
+:dependencies [[clavatar "0.2.1"]]
 ```
 
 Using the library is extremely simple. Just use the `gravatar` function. Here are some examples:
