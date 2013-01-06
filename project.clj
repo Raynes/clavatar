@@ -1,3 +1,6 @@
-(defproject clavatar "0.2.0"
+(defproject clavatar "0.2.1"
   :description "A Clojure library for working with Gravatar."
-  :dependencies [[clojure "1.3.0"]])
+  :url "https://github.com/Raynes/laser"
+  :license {:name "Eclipse Public License"
+            :url "http://www.eclipse.org/legal/epl-v10.html"}
+  :dependencies [[clojure "1.4.0"]])
