@@ -6,3 +6,4 @@ pom.xml
 *.iml
 .idea/
 .lein*
+target/
