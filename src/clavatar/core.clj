@@ -1,5 +1,7 @@
 (ns clavatar.core
-  (:import java.security.MessageDigest))
+  (:require [clojure.string :as s])
+  (:import java.security.MessageDigest
+           javax.xml.bind.annotation.adapters.HexBinaryAdapter))
 
 (def ^:private gravatar-base-url ".gravatar.com/avatar/")
 
@@ -8,7 +10,9 @@
   [^String s]
   (let [digest ^MessageDigest (MessageDigest/getInstance "MD5")]
     (.reset digest)
-    (.toString (BigInteger. 1 (.digest digest (.getBytes s "UTF-8"))) 16)))
+    (s/lower-case
+      (.marshal (HexBinaryAdapter.)
+                (.digest digest (.getBytes s "UTF-8"))))))
 
 (defn- genhash
   "Generate the hash needed for Gravatar.
